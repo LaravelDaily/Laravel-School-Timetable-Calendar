@@ -26,16 +26,9 @@ Demo-project showing how to use roles-permissions (students, teachers, admins), 
 - Run __php artisan key:generate__
 - Run __php artisan migrate --seed__ (it has some seeded data for your testing)
 - That's it: launch the main URL. 
-- Admin's credentials __admin@admin.com__ - __password__
-- Teacher's credentials __teacher@teacher.com__ - __password__
-- Student's credentials __student@student.com__ - __password__
-
-
-- - - - -
-
-## Helpful articles
-
-- [Laravel: Find Addresses with Coordinates via Google Maps API](https://laraveldaily.com/laravel-find-addresses-with-coordinates-via-google-maps-api/)
+- Admin's credentials: __admin@admin.com__ - __password__
+- Teacher's credentials: __teacher@teacher.com__ - __password__
+- Student's credentials: __student@student.com__ - __password__
 
 
 - - - - -
