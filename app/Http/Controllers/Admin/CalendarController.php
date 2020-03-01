@@ -12,11 +12,11 @@ class CalendarController extends Controller
     public function index(TimeService $time)
     {
         $timeRange = $time->generateTimeRange(config('app.calendar.start_time'), config('app.calendar.end_time'));
-$weekDays = Lesson::WEEK_DAYS;
-$lessons = Lesson::with('class', 'teacher')
-    ->calendarByRoleOrClassId()
-    ->get();
+        $weekDays  = Lesson::WEEK_DAYS;
+        $lessons   = Lesson::with('class', 'teacher')
+            ->calendarByRoleOrClassId()
+            ->get();
 
-return view('admin.calendar', compact('timeRange', 'weekDays', 'lessons'));
+        return view('admin.calendar', compact('timeRange', 'weekDays', 'lessons'));
     }
 }

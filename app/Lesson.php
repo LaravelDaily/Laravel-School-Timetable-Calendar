@@ -29,15 +29,15 @@ class Lesson extends Model
         'deleted_at',
     ];
 
-const WEEK_DAYS = [
-    '1' => 'Monday',
-    '2' => 'Tuesday',
-    '3' => 'Wednesday',
-    '4' => 'Thursday',
-    '5' => 'Friday',
-    '6' => 'Saturday',
-    '7' => 'Sunday',
-];
+    const WEEK_DAYS = [
+        '1' => 'Monday',
+        '2' => 'Tuesday',
+        '3' => 'Wednesday',
+        '4' => 'Thursday',
+        '5' => 'Friday',
+        '6' => 'Saturday',
+        '7' => 'Sunday',
+    ];
 
     public function getDifferenceAttribute()
     {
@@ -51,7 +51,8 @@ const WEEK_DAYS = [
 
     public function setStartTimeAttribute($value)
     {
-        $this->attributes['start_time'] = $value ? Carbon::createFromFormat(config('panel.lesson_time_format'), $value)->format('H:i:s') : null;
+        $this->attributes['start_time'] = $value ? Carbon::createFromFormat(config('panel.lesson_time_format'),
+            $value)->format('H:i:s') : null;
     }
 
     public function getEndTimeAttribute($value)
@@ -61,7 +62,8 @@ const WEEK_DAYS = [
 
     public function setEndTimeAttribute($value)
     {
-        $this->attributes['end_time'] = $value ? Carbon::createFromFormat(config('panel.lesson_time_format'), $value)->format('H:i:s') : null;
+        $this->attributes['end_time'] = $value ? Carbon::createFromFormat(config('panel.lesson_time_format'),
+            $value)->format('H:i:s') : null;
     }
 
     function class()
@@ -86,7 +88,7 @@ const WEEK_DAYS = [
             })
             ->where([
                 ['start_time', '<', $endTime],
-                ['end_time', '>', $startTime]
+                ['end_time', '>', $startTime],
             ])
             ->count();
 
@@ -96,13 +98,13 @@ const WEEK_DAYS = [
     public function scopeCalendarByRoleOrClassId($query)
     {
         return $query->when(!request()->input('class_id'), function ($query) {
-                $query->when(auth()->user()->is_teacher, function ($query) {
-                    $query->where('teacher_id', auth()->user()->id);
-                })
+            $query->when(auth()->user()->is_teacher, function ($query) {
+                $query->where('teacher_id', auth()->user()->id);
+            })
                 ->when(auth()->user()->is_student, function ($query) {
                     $query->where('class_id', auth()->user()->class_id ?? '0');
                 });
-            })
+        })
             ->when(request()->input('class_id'), function ($query) {
                 $query->where('class_id', request()->input('class_id'));
             });
