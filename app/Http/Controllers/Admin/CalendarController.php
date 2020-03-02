@@ -4,19 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Lesson;
-use App\Services\TimeService;
-use Illuminate\Http\Request;
+use App\Services\CalendarService;
 
 class CalendarController extends Controller
 {
-    public function index(TimeService $time)
+    public function index(CalendarService $calendarService)
     {
-        $timeRange = $time->generateTimeRange(config('app.calendar.start_time'), config('app.calendar.end_time'));
-        $weekDays  = Lesson::WEEK_DAYS;
-        $lessons   = Lesson::with('class', 'teacher')
-            ->calendarByRoleOrClassId()
-            ->get();
+        $weekDays     = Lesson::WEEK_DAYS;
+        $calendarData = $calendarService->generateCalendarData($weekDays);
 
-        return view('admin.calendar', compact('timeRange', 'weekDays', 'lessons'));
+        return view('admin.calendar', compact('weekDays', 'calendarData'));
     }
 }
