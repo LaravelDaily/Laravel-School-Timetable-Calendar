@@ -23,24 +23,20 @@
                             @endforeach
                         </thead>
                         <tbody>
-                            @foreach($timeRange as $time)
+                            @foreach($calendarData as $time => $days)
                                 <tr>
                                     <td>
-                                        {{ $time['start'] }} - {{ $time['end'] }}
+                                        {{ $time }}
                                     </td>
-                                    @foreach($weekDays as $index => $day)
-                                        @php($lesson = $lessons->where('weekday', $index)->where('start_time', $time['start'])->first())
-                                        @if ($lesson)
-                                            <td rowspan="{{ $lesson->difference/30 ?? '' }}" class="align-middle text-center" style="background-color:#f0f0f0">
-                                                {{ $lesson->class->name }}<br>
-                                                Teacher: {{ $lesson->teacher->name }}
+                                    @foreach($days as $value)
+                                        @if (is_array($value))
+                                            <td rowspan="{{ $value['rowspan'] }}" class="align-middle text-center" style="background-color:#f0f0f0">
+                                                {{ $value['class_name'] }}<br>
+                                                Teacher: {{ $value['teacher_name'] }}
                                             </td>
-                                        @elseif ($lessons->where('weekday', $index)->where('start_time', '<', $time['start'])->where('end_time', '>=', $time['end'])->count())
-                                            
-                                        @else
+                                        @elseif ($value === 1)
                                             <td></td>
                                         @endif
-                                        
                                     @endforeach
                                 </tr>
                             @endforeach
