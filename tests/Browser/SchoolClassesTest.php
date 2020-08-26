@@ -13,8 +13,8 @@ class SchoolClassesTest extends DuskTestCase
         $admin = \App\User::find(1);
         $this->browse(function (Browser $browser) use ($admin) {
             $browser->loginAs($admin);
-            $browser->visit(route('admin.schoolclasses.index'));
-            $browser->assertRouteIs('admin.schoolclasses.index');
+            $browser->visit(route('admin.school-classes.index'));
+            $browser->assertRouteIs('admin.school-classes.index');
         });
     }
 }
