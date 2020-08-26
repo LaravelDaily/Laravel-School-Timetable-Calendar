@@ -11,8 +11,7 @@ services:
 
 before_install:
   - mysql -e "CREATE DATABASE laravel character set utf8mb4 collate utf8mb4_bin;"
-  - mysql_upgrade -u root -p root
-  - service mysql restart
+  - mysql_upgrade -u root -p 
 install:
   - cp .env.example .env
   - travis_retry composer install --no-interaction --prefer-dist --no-suggest
