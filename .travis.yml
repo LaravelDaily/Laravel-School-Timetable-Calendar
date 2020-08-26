@@ -10,6 +10,7 @@ install:
   - cp .env.example .env
   - travis_retry composer install --no-interaction --prefer-dist --no-suggest
   - php artisan key:generate
+  - php artisan migrate --seed
   - php artisan dusk:chrome-driver
 
 before_script:
