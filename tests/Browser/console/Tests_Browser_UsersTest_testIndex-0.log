@@ -1,0 +1,14 @@
+[
+    {
+        "level": "SEVERE",
+        "message": "http:\/\/localhost\/_dusk\/login\/1 - Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "source": "network",
+        "timestamp": 1598433553482
+    },
+    {
+        "level": "SEVERE",
+        "message": "http:\/\/localhost\/admin\/users - Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "source": "network",
+        "timestamp": 1598433553540
+    }
+]
