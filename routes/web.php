@@ -12,7 +12,7 @@ Route::get('/home', function () {
 
 Auth::routes(['register' => false]);
 // Admin
-
+//Example Here
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
     // Permissions
