@@ -1,0 +1,13 @@
+language: php
+
+php:
+  - 7.2
+
+before_script:
+  - composer install
+  - composer require --dev laravel/dusk
+  - composer update
+  - php artisan dusk:install
+
+script:
+  - php artisan dusk
