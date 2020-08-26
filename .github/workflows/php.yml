@@ -18,6 +18,8 @@ jobs:
         run: composer require --dev laravel/dusk
       - name: Install Dusk
         run: php artisan dusk:install
+      - name: Clear
+        run: php artisan config:clear
       - name: Generate Application Key
         run: php artisan key:generate
       - name: Upgrade Chrome Driver
