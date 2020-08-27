@@ -10,8 +10,8 @@ services:
   - mysql
 
 before_install:
-  - mysql --user="root" --password="root" -e "CREATE DATABASE laravel character set utf8mb4 collate utf8mb4_bin;"
-
+  - mysql -e "CREATE DATABASE laravel character set utf8mb4 collate utf8mb4_bin;"
+  - mysql_upgrade -u root
 
 install:
   - cp .env.example .env
