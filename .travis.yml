@@ -39,4 +39,4 @@ before_script:
 script:
   - php artisan dusk
   - vendor/bin/phpunit -c phpunit.xml --coverage-clover=coverage-report.clover --log-junit=test-report.xml
-  - sonar-scanner
+  - sonar-scanner -X
