@@ -38,5 +38,5 @@ before_script:
 
 script:
   - php artisan dusk
-  - vendor/bin/phpunit --configuration phpunit.xml --coverage-clover coverage-report.xml
+  - vendor/bin/phpunit --configuration phpunit.xml --coverage-clover=coverage-report.xml
   - sonar-scanner
