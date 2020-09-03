@@ -4,12 +4,7 @@
          backupGlobals="false"
          backupStaticAttributes="false"
          bootstrap="vendor/autoload.php"
-         colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false">
+         colors="true">
     <testsuites>
         <testsuite name="Unit">
             <directory suffix="Test.php">./tests/Unit</directory>
@@ -22,8 +17,7 @@
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./app</directory>
-        </whitelist>
-        
+        </whitelist> 
     </filter>
     <logging>
         <!-- and this is where your report will be written -->
@@ -36,6 +30,5 @@
         <server name="MAIL_DRIVER" value="array"/>
         <server name="QUEUE_CONNECTION" value="sync"/>
         <server name="SESSION_DRIVER" value="array"/>
-        <server name="DB_CONNECTION" value="mysql_testing"/>
     </php>
 </phpunit>
