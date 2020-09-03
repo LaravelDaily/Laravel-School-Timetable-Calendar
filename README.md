@@ -5,7 +5,7 @@ Demo-project showing how to use roles-permissions (students, teachers, admins), 
 - - - - -----
 YC HERE
 JJ here
-JJ here again
+
 ## Screenshots 
 
 ![Laravel School Timetable Calendar](https://quickadminpanel.com/blog/wp-content/uploads/2020/02/Screen-Shot-2020-02-18-at-10.18.36-AM.png)
