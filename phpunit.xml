@@ -25,7 +25,7 @@
         </whitelist>
         <logging>
         <!-- and this is where your report will be written -->
-        <log type="coverage-clover" target="./clover.xml"/>
+        <log type="coverage-clover" target="./coverage-report.xml"/>
         <log type="log-junit" target="./test-report.xml"/>
     </logging>
     </filter>
