@@ -30,7 +30,7 @@ install:
   - php artisan key:generate
   - php artisan migrate --seed
   - php artisan dusk:chrome-driver
-  - composer update --no-interaction --no-suggest --no-progress
+
 
 before_script:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
@@ -38,5 +38,4 @@ before_script:
 
 script:
   - php artisan dusk
-
   - sonar-scanner
