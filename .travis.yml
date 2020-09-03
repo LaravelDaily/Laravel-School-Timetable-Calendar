@@ -1,10 +1,21 @@
 language: php
+sudo: false
 
 php:
   - 7.3
 
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
 addons:
   chrome: stable
+  sonarcloud:
+    organization: "<your organization key>"
+
+git:
+  depth: false
 
 services:
   - mysql
@@ -19,6 +30,7 @@ install:
   - php artisan key:generate
   - php artisan migrate --seed
   - php artisan dusk:chrome-driver
+  - composer update --no-interaction --no-suggest --no-progress
 
 before_script:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
@@ -26,3 +38,5 @@ before_script:
 
 script:
   - php artisan dusk
+  - vendor/bin/phpunit -c phpunit.xml.dist --coverage-clover=coverage-report.clover --log-junit=test-report.xml
+  - sonar-scanner
