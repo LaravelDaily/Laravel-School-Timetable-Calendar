@@ -37,5 +37,5 @@ before_script:
   - php artisan serve &
 
 script:
-  - vendor/bin/phpunit -v
+  - phpunit --configuration phpunit.xml
   - sonar-scanner
