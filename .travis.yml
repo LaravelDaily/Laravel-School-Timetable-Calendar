@@ -12,7 +12,7 @@ cache:
 addons:
   chrome: stable
   sonarcloud:
-    organization: "<your organization key>"
+    organization: "46fe8659228d8510c2ef1402b932b81f66b04f86"
 
 git:
   depth: false
