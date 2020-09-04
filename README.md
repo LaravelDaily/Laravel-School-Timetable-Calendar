@@ -4,7 +4,7 @@ Demo-project showing how to use roles-permissions (students, teachers, admins), 
 
 - - - - -----
 YC HERE
-JJ here
+JJ 
 
 ## Screenshots 
 
