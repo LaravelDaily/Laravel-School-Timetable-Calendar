@@ -13,7 +13,7 @@ addons:
   chrome: stable
   sonarcloud:
     organization: "jj1216"
-    
+
 git:
   depth: false
 
@@ -37,5 +37,5 @@ before_script:
 
 script:
   - php artisan dusk
-  - vendor/bin/phpunit --coverage-clover coverage.xml --log-junit=test-report.xml
+  - vendor/bin/phpunit --coverage-clover coverage.xml --log-junit test-report.xml
   - sonar-scanner
