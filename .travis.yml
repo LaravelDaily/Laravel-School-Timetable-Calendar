@@ -13,9 +13,7 @@ addons:
   chrome: stable
   sonarcloud:
     organization: "jj1216"
-    token:
-      secure: "travis encript 3e46e2c3ee7c503780da01cbba85cd1a23e7d65d"
-
+    
 git:
   depth: false
 
