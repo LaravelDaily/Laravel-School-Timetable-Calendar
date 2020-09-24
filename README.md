@@ -1,4 +1,4 @@
-# Laravel 6 School Timetable Calendar
+# Laravel 8 School Timetable Calendar
 
 Demo-project showing how to use roles-permissions (students, teachers, admins), Eloquent Query Scopes and how to build a simple table-based timetable calendar without any JavaScript plugin.
 
